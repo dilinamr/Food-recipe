@@ -1,0 +1,14 @@
+.navbar-main {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.navbar-img {
+  height: 50px;
+  width: 50px;
+}
+.navbar-title {
+  font-size: 2em;
+  font-family: sans-serif;
+}

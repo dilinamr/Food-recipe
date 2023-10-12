@@ -5,7 +5,7 @@ export const FoodList = ({ fooddata }) => {
   return (
     <div>
       {fooddata.map((food) => (
-        <FoodItem food={food} />
+        <FoodItem food={food} key={food.id} />
       ))}
     </div>
   );

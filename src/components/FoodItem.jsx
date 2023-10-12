@@ -5,6 +5,7 @@ const FoodItem = ({ food }) => {
     <div>
       <img src={food.image} alt="Foodimage" />
       <h1 key={food.id}>{food.title}</h1>
+      <button>ViewRecipe</button>
     </div>
   );
 };
