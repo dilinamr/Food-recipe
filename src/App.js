@@ -1,17 +1,14 @@
-
-import { useState } from 'react';
-import './App.css';
-import { Search } from './components/Search';
+import { useState } from "react";
+import "./App.css";
+import { Search } from "./components/Search";
+import { FoodList } from "./components/FoodList";
 
 function App() {
-  const [fooddata,setfooddata] = useState([]);
+  const [fooddata, setfooddata] = useState([]);
   return (
-    <div className='app'>
-    <Search fooddata={fooddata} setfooddata={setfooddata}/>
-    {
-      fooddata.map((item)=><h1 key={item.id}>{item.title}</h1>)
-    }
-    
+    <div className="app">
+      <Search fooddata={fooddata} setfooddata={setfooddata} />
+      <FoodList fooddata={fooddata} />
     </div>
   );
 }
