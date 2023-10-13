@@ -6,7 +6,7 @@ export const Search = ({ fooddata, setfooddata }) => {
   const [query, setquery] = useState("pizza");
   useEffect(() => {
     async function fetchapi() {
-      const res = await fetch(`${URl}?${query}&apiKey=${API_KEY}`);
+      const res = await fetch(`${URl}?query=${query}&apiKey=${API_KEY}`);
       const data = await res.json();
 
       console.log(data.results);
