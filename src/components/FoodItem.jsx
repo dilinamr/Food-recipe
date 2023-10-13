@@ -1,11 +1,17 @@
 import React from "react";
-
+import style from "../components/FoodItem.module.css";
 const FoodItem = ({ food }) => {
   return (
-    <div>
-      <img src={food.image} alt="Foodimage" />
-      <h1 key={food.id}>{food.title}</h1>
-      <button>ViewRecipe</button>
+    <div className={style.itemcontainer}>
+      <img className={style.itemimg} src={food.image} alt="Foodimage" />
+      <div className={style.itemcontent}>
+        <p className={style.itemname} key={food.id}>
+          {food.title}
+        </p>
+      </div>
+      <div className={style.btncontainer}>
+        <button className={style.btn}>View Recipe</button>
+      </div>
     </div>
   );
 };

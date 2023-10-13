@@ -1,0 +1,39 @@
+.itemcontainer {
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  margin: 20px;
+  overflow: hidden;
+  font-family: polysans, sans-serif;
+}
+
+.itemimg {
+  max-width: 100%;
+  height: auto;
+}
+.itemcontent {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.itemname {
+  font-size: 1em;
+  font-weight: 550;
+  color: #393e46;
+}
+.btn {
+  padding: 10px;
+  background-color: rgb(11, 142, 98);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+.btncontainer {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
