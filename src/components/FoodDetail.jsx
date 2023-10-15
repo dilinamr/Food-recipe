@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 const FoodDetail = ({ foodid }) => {
   const [food, setFood] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
   const URL = `https://api.spoonacular.com/recipes/${foodid}/information`;
 
   const API_KEY = "4da6f6e9cc87470994d5494179eb3228";
@@ -9,6 +10,7 @@ const FoodDetail = ({ foodid }) => {
       const res = await fetch(`${URL}?apiKey=${API_KEY}`);
       const data = await res.json();
       setFood(data);
+      setIsLoading(false);
       console.log(data);
     }
     fetchfood();
@@ -31,11 +33,14 @@ const FoodDetail = ({ foodid }) => {
           <span>{food.pricePerServing} rs per serving</span>
         </div>
       </div>
+
       <div>
         <h2>instructions</h2>
-        {food.analyzedInstructions[0].steps.map((step) => (
-          <li>{step.step}</li>
-        ))}
+        {isLoading ? (
+          <p>Loading.....</p>
+        ) : (
+          food.analyzedInstructions[0].steps.map((step) => <li>{step.step}</li>)
+        )}
       </div>
     </div>
   );
