@@ -9,14 +9,34 @@ const FoodDetail = ({ foodid }) => {
       const res = await fetch(`${URL}?apiKey=${API_KEY}`);
       const data = await res.json();
       setFood(data);
+      console.log(data);
     }
     fetchfood();
   }, [foodid]);
   return (
     <div>
-      FoodDetail:{foodid}
-      <h3>{food.title}</h3>
-      <img src={food.image} alt="img" />
+      <div>
+        <h1>{food.title}</h1>
+        <img src={food.image} alt="img" />
+        <div>
+          <span>
+            <strong>🕓 : {food.readyInMinutes} Minutes</strong>
+          </span>
+          <span>
+            <strong>serves : {food.servings} persons</strong>
+          </span>
+          <span>{food.vegetarian ? "🥕 VEGETARIAN" : "🥩 NON-VEGETARIAN"}</span>
+        </div>
+        <div>
+          <span>{food.pricePerServing} rs per serving</span>
+        </div>
+      </div>
+      <div>
+        <h2>instructions</h2>
+        {food.analyzedInstructions[0].steps.map((step) => (
+          <li>{step.step}</li>
+        ))}
+      </div>
     </div>
   );
 };
