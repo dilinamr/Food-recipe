@@ -20,6 +20,7 @@
   margin-bottom: 10px;
 }
 .recipedetails {
+  max-width: 90%;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
@@ -35,4 +36,8 @@
 }
 .recipeInstruction li {
   margin: 10px 0px;
+}
+.imgcontainer {
+  display: flex;
+  justify-content: center;
 }

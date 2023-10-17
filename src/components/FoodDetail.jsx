@@ -20,7 +20,9 @@ const FoodDetail = ({ foodid }) => {
     <div>
       <div className={styles.recipecard}>
         <h1 className={styles.recipename}>{food.title}</h1>
-        <img className={styles.recipeimage} src={food.image} alt="img" />
+        <div className={styles.imgcontainer}>
+          <img className={styles.recipeimage} src={food.image} alt="img" />
+        </div>
         <div className={styles.recipedetails}>
           <span>
             <strong>🕓 : {food.readyInMinutes} Minutes</strong>
@@ -28,10 +30,16 @@ const FoodDetail = ({ foodid }) => {
           <span>
             <strong>serves : {food.servings} persons</strong>
           </span>
-          <span>{food.vegetarian ? "🥕 VEGETARIAN" : "🥩 NON-VEGETARIAN"}</span>
+          <span>
+            <strong>
+              {food.vegetarian ? "🥕 VEGETARIAN" : "🥩 NON-VEGETARIAN"}
+            </strong>
+          </span>
         </div>
         <div>
-          <span>{food.pricePerServing} rs per serving</span>
+          <span>
+            <strong>{food.pricePerServing} rs per serving</strong>
+          </span>
         </div>
 
         <h2>instructions</h2>
