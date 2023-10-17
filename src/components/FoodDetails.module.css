@@ -1,0 +1,38 @@
+.recipecard {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 10px;
+  font-family: polysans, sans-serif;
+  color: #393939;
+}
+.recipename {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.recipeimage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.recipedetails {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.recipeInstruction {
+  padding: 0;
+  border-radius: 5px;
+  color: #959595;
+}
+.recipeInstruction ol {
+  margin-left: 0px;
+}
+.recipeInstruction li {
+  margin: 10px 0px;
+}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import styles from "./FoodDetails.module.css";
 const FoodDetail = ({ foodid }) => {
   const [food, setFood] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -17,10 +18,10 @@ const FoodDetail = ({ foodid }) => {
   }, [foodid]);
   return (
     <div>
-      <div>
-        <h1>{food.title}</h1>
-        <img src={food.image} alt="img" />
-        <div>
+      <div className={styles.recipecard}>
+        <h1 className={styles.recipename}>{food.title}</h1>
+        <img className={styles.recipeimage} src={food.image} alt="img" />
+        <div className={styles.recipedetails}>
           <span>
             <strong>🕓 : {food.readyInMinutes} Minutes</strong>
           </span>
@@ -32,15 +33,19 @@ const FoodDetail = ({ foodid }) => {
         <div>
           <span>{food.pricePerServing} rs per serving</span>
         </div>
-      </div>
 
-      <div>
         <h2>instructions</h2>
-        {isLoading ? (
-          <p>Loading.....</p>
-        ) : (
-          food.analyzedInstructions[0].steps.map((step) => <li>{step.step}</li>)
-        )}
+        <div className={styles.recipeInstruction}>
+          <ol>
+            {isLoading ? (
+              <p>Loading.....</p>
+            ) : (
+              food.analyzedInstructions[0].steps.map((step) => (
+                <li>{step.step}</li>
+              ))
+            )}
+          </ol>
+        </div>
       </div>
     </div>
   );
