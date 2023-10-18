@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./FoodDetails.module.css";
+import IncredientList from "./IncredientList";
 const FoodDetail = ({ foodid }) => {
   const [food, setFood] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -38,10 +39,11 @@ const FoodDetail = ({ foodid }) => {
         </div>
         <div>
           <span>
-            <strong>{food.pricePerServing} rs per serving</strong>
+            <strong>{food.pricePerServing} ₹ per serving</strong>
           </span>
         </div>
-
+        <h2>incredients</h2>
+        <IncredientList food={food} isLoading={isLoading} />
         <h2>instructions</h2>
         <div className={styles.recipeInstruction}>
           <ol>
@@ -49,7 +51,7 @@ const FoodDetail = ({ foodid }) => {
               <p>Loading.....</p>
             ) : (
               food.analyzedInstructions[0].steps.map((step) => (
-                <li>{step.step}</li>
+                <li key={step.number}>{step.step}</li>
               ))
             )}
           </ol>
