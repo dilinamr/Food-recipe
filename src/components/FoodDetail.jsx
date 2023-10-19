@@ -42,13 +42,13 @@ const FoodDetail = ({ foodid }) => {
             <strong>{food.pricePerServing} ₹ per serving</strong>
           </span>
         </div>
-        <h2>incredients</h2>
+        <h2>Incredients</h2>
         <IncredientList food={food} isLoading={isLoading} />
-        <h2>instructions</h2>
+        <h2>Instructions</h2>
         <div className={styles.recipeInstruction}>
           <ol>
             {isLoading ? (
-              <p>Loading.....</p>
+              <p>LOADING.....</p>
             ) : (
               food.analyzedInstructions[0].steps.map((step) => (
                 <li key={step.number}>{step.step}</li>

@@ -6,7 +6,7 @@ const IncredientList = ({ food, isLoading }) => {
     <div>
       {" "}
       {isLoading ? (
-        <p>Loading.....</p>
+        <p>LOADING.....</p>
       ) : (
         food.extendedIngredients.map((item) => <Item item={item} />)
       )}
