@@ -1,19 +1,23 @@
 import React from "react";
+import style from "../components/item.module.css";
 
 const Item = ({ item }) => {
   return (
-    <div>
+    <div className={style.itemContainer}>
       {" "}
-      <div key={item.id}>
+      <div key={item.id} className={style.imageContainer}>
         <img
+          className={style.img}
           src={`https://spoonacular.com/cdn/ingredients_100x100/${item.image}`}
           alt="incredients"
         />
-        <h3>{item.name}</h3>
-        <h3>
+      </div>
+      <div className={style.nameContainer}>
+        <div className={style.name}>{item.name}</div>
+        <div className={style.amount}>
           {item.amount}
           {item.unit}
-        </h3>
+        </div>
       </div>
     </div>
   );
